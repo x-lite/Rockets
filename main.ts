@@ -2,9 +2,8 @@ basic.forever(function(){
 
     //basics.run()
 
-    functions.run()
+    //functions.run()
 
-    //let pixel = new objects.pixel();
-    //pixel.run()
+   //objects.run()
 
 })

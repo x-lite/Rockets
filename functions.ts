@@ -4,12 +4,11 @@ namespace functions {
 
     export function run() {
 
-        diagonal();
+        drawDiagonal();
         
-
     }
 
-    function diagonal() {
+    export function drawDiagonal() {
 
         led.plot(0, 0)
         led.plot(1, 1)
@@ -18,9 +17,8 @@ namespace functions {
         led.plot(4, 4)
 
     }
-
     
-    function drawLine() {
+    export function drawLine() {
         basic.pause(300)
         led.toggle(i, i)
         i++

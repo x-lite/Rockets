@@ -1,26 +1,21 @@
 namespace objects {
 
-    export class pixel {
-
-        i = 0;
-        
-        constructor() {
-
-        }
-
-        run() {
-
-            led.plot(0, 0)
-            led.plot(1, 1)
-            led.plot(2, 2)
-            led.plot(3, 3)
-            led.plot(4, 4)
-            
-        }
-
-           
+    export function run() {
+        let myObject = new myFirstObject();
+        myObject.drawDiagonal();
     }
 
 
+    class myFirstObject {
+
+        //i = 0;
+        constructor() {
+        }
+
+        drawDiagonal() {
+            functions.drawDiagonal();
+        }
+           
+    }
 
 }
