@@ -4,7 +4,7 @@ namespace functions {
 
     export function run() {
 
-        drawDiagonal();
+       image();
         
     }
 
@@ -23,5 +23,19 @@ namespace functions {
         led.toggle(i, i)
         i++
         if(i > 4)i=0;
+    }
+
+    function image() {
+
+        let iamHappy = images.iconImage(IconNames.Happy)
+        let iamSad = images.iconImage(IconNames.Sad)
+
+        input.onButtonPressed(Button.A, () => {
+            iamHappy.showImage(0);
+        });
+        input.onButtonPressed(Button.B, () => {
+            iamSad.showImage(0);
+        });
+
     }
 }

@@ -1,9 +1,7 @@
-basic.forever(function(){
+//basics.run()
 
-    //basics.run()
+functions.run()
 
-    //functions.run()
+//objects.run()
 
-   //objects.run()
 
-})
