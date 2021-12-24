@@ -7,19 +7,15 @@ namespace functions {
     let heart = images.iconImage(IconNames.Heart)
     let ghost = images.iconImage(IconNames.Ghost);
 
-    let imgList = [happyImg, sadImg, smallHeart, heart, ghost]
+    let imgList = [ghost, heart, happyImg, sadImg, smallHeart]
 
-    function loopThruImages() {
-        imgList.forEach(function(i){
-            i.showImage(0)
-            basic.pause(500)
-        })
-    }
+
 
     export function run() {
 
+       //drawDiagonal();
        loopThruImages();
-        
+       //ifElse()
     }
 
     export function drawDiagonal() {
@@ -40,14 +36,21 @@ namespace functions {
     }
 
 
-    function collection() {
+    function loopThruImages() {
+        imgList.forEach(function (i) {
+            i.showImage(0)
+            basic.pause(500)
+        })
+    }
+    
+    function ifElse() {
         let list = [1, 5, 9]
 
         for(let r = 0; r < 10; r++) {
             
             let x = list.indexOf(r)
             
-            if (x > 0) {
+            if (x >= 0) {
                 happy();
             } else {
                 sad();
@@ -61,11 +64,12 @@ namespace functions {
     function happy() {
         happyImg.showImage(0);
     }
+
     function sad() {
         sadImg.showImage(0);
     }
 
-    function image() {
+    function setupButtons() {
 
         input.onButtonPressed(Button.A, () => {
             sad();

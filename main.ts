@@ -1,7 +1,7 @@
 //basics.run()
 
-functions.run()
+//functions.run()
 
-//objects.run()
+objects.run()
 
 
