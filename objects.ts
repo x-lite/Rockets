@@ -13,12 +13,12 @@ namespace objects {
     }
 
     function setOffASingleRocket() {
-        let rocket = new simpleRocket(0);
+        let rocket = new simpleRocket(0, "SIMPLE");
         rocket.fire();
     }
 
     function setOffABunchOfRockets() {
-        let rockets = [new simpleRocket(0), new simpleRocket(1), new simpleRocket(2), new simpleRocket(3), new simpleRocket(4)]
+        let rockets = [new simpleRocket(0, ""), new simpleRocket(1, "SIMPLE"), new simpleRocket(2, ""), new simpleRocket(3, "SIMPLE"), new simpleRocket(4, "SIMPLE")]
      
         rockets.forEach(function(rocket) {
             rocket.fire();
@@ -41,9 +41,11 @@ namespace objects {
     class simpleRocket {
 
         _xPosition: number;
+        _explosionType: string;
 
-        constructor(xPosition: number) {
+        constructor(xPosition: number, explosionType: string) {
             this._xPosition = xPosition;
+            this._explosionType = explosionType;
             this.reset();
         }
 
@@ -53,13 +55,43 @@ namespace objects {
         }
 
         fire() {
-            for(let ypos = 4; ypos >= 0; ypos--) {
-                led.unplot(this._xPosition, ypos+1)
+            this.flyUp();
+            this.explode();
+            basic.pause(250);
+            this.reset();
+        }
+
+        flyUp() {
+            for (let ypos = 4; ypos >= 0; ypos--) {
+                led.unplot(this._xPosition, ypos + 1)
                 led.plot(this._xPosition, ypos);
                 basic.pause(250);
             }
-            basic.pause(1000);
-            this.reset();
+        }
+
+        explode() {
+            if(this._explosionType=="SIMPLE") this.simpleExplosion();
+        }
+
+        simpleExplosion() {
+            //Explode the rocket - part1
+            led.plot(this._xPosition - 1, 0);
+            led.plot(this._xPosition, 0);
+            led.plot(this._xPosition + 1, 0);
+            led.plot(this._xPosition, 1)
+
+
+            basic.pause(250);
+
+            //Explode the rocket - part2
+            led.unplot(this._xPosition - 1, 0);
+            led.unplot(this._xPosition, 0);
+            led.unplot(this._xPosition + 1, 0);
+            led.unplot(this._xPosition, 1)
+        }
+
+        complexExplosion() {
+            
         }
 
 
