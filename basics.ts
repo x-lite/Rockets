@@ -21,7 +21,7 @@ namespace basics {
                 basic.pause(250);
             }
 
-            if(rocketNumber == 0 || rocketNumber ==2 || rocketNumber ==4) {
+            if(rocketNumber == 0 || rocketNumber == 2 || rocketNumber == 4) {
                 //Explode the rocket - part1
                 led.plot(rocketNumber-1, 0);
                 led.plot(rocketNumber, 0);
@@ -37,7 +37,32 @@ namespace basics {
                 led.unplot(rocketNumber + 1, 0);
                 led.unplot(rocketNumber, 1)
             } else {
-                //Some other type of explosion could go here
+                led.plot(rocketNumber - 1, 0);
+                led.plot(rocketNumber, 0);
+                led.plot(rocketNumber + 1, 0);
+                led.plot(rocketNumber, 1)
+
+                basic.pause(250);
+                
+                led.unplot(rocketNumber - 1, 0);
+                led.unplot(rocketNumber, 0);
+                led.unplot(rocketNumber + 1, 0);
+                led.unplot(rocketNumber, 1);
+
+                basic.pause(250);
+                                
+                led.plot(rocketNumber - 1, 0);
+                led.plot(rocketNumber, 0);
+                led.plot(rocketNumber + 1, 0);
+                led.plot(rocketNumber, 1)
+
+                basic.pause(250);
+
+                //Explode the rocket - part2
+                led.unplot(rocketNumber - 1, 0);
+                led.unplot(rocketNumber, 0);
+                led.unplot(rocketNumber + 1, 0);
+                led.unplot(rocketNumber, 1);
             }
 
             //Reset the rocket

@@ -18,7 +18,7 @@ namespace objects {
     }
 
     function setOffABunchOfRockets() {
-        let rockets = [new simpleRocket(0, ""), new simpleRocket(1, "SIMPLE"), new simpleRocket(2, ""), new simpleRocket(3, "SIMPLE"), new simpleRocket(4, "SIMPLE")]
+        let rockets = [new simpleRocket(0, "COMPLEX"), new simpleRocket(1, "SIMPLE"), new simpleRocket(2, "COMPLEX"), new simpleRocket(3, "SIMPLE"), new simpleRocket(4, "SIMPLE")]
      
         rockets.forEach(function(rocket) {
             rocket.fire();
@@ -71,6 +71,7 @@ namespace objects {
 
         explode() {
             if(this._explosionType=="SIMPLE") this.simpleExplosion();
+            if(this._explosionType=="COMPLEX") this.complexExplosion();
         }
 
         simpleExplosion() {
@@ -91,7 +92,11 @@ namespace objects {
         }
 
         complexExplosion() {
-            
+            this.simpleExplosion();
+            basic.pause(100);
+            this.simpleExplosion();
+            basic.pause(100);
+            this.simpleExplosion();
         }
 
 
