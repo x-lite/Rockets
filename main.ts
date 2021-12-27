@@ -1,6 +1,6 @@
-//basics.run()
+basics.run()
 
-functions.run()
+//functions.run()
 
 //objects.run()
 
