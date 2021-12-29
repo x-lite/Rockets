@@ -9,9 +9,7 @@
     "files": [
         "main.ts",
         "README.md",
-        "functions.ts",
-        "objects.ts",
-        "basics.ts"
+        "objects.ts"
     ],
     "testFiles": [
         "test.ts"

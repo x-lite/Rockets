@@ -1,20 +1,7 @@
 namespace objects {
 
     export function run() {
-        //runMyFirstObject();
-        //setOffASingleRocket();
         basic.forever(setOffABunchOfRockets)
-    }
-
-
-    function runMyFirstObject() {
-        let myObject = new myFirstObject();
-        myObject.drawDiagonal();
-    }
-
-    function setOffASingleRocket() {
-        let rocket = new simpleRocket(0);
-        rocket.fire();
     }
 
     function setOffABunchOfRockets() {
@@ -26,17 +13,6 @@ namespace objects {
     
     }
 
-    class myFirstObject {
-
-        //i = 0;
-        constructor() {
-        }
-
-        drawDiagonal() {
-            functions.drawDiagonal();
-        }
-           
-    }
 
     class simpleRocket {
 
